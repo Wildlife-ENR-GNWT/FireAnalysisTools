@@ -35,7 +35,7 @@ arcpy.Union_analysis(infeatures, Union1, "ALL", "", "GAPS")
 
 ##SQLExpr1 = "FID_" + Feature_one + " = 1 AND FID_" + Feature_two + " < 0"
 # Building SQL to select the original feature class minus the overlaps
-SQLExpr1 = """ {0} > 0 AND {1} < 0 """.format("FID_" + Feature_one_name, "FID_" + Feature_two_name)
+SQLExpr1 = """ {0} >= 0 AND {1} < 0 """.format("FID_" + Feature_one_name, "FID_" + Feature_two_name)
 #create layer file for SelectbyAttributes
 arcpy.MakeFeatureLayer_management(Union1, "Union2")
 
